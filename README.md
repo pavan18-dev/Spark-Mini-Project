@@ -1,111 +1,88 @@
-🗺️ Spark Postal Network Analysis — Mini Project
+# 🗺️ Spark Postal Network Analysis — Mini Project
 
+[![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)](https://www.python.org/)  
+[![Apache Spark](https://img.shields.io/badge/Apache%20Spark-3.5-orange?logo=apache-spark)](https://spark.apache.org/)  
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
+This project leverages **Apache Spark** and geospatial analytics to analyze the Indian postal network.  
+Using the national *Pincode Dataset*, the aim is to identify postal coverage gaps, detect isolated post-offices, and recommend strategic expansion locations.
 
+---
 
+## 📂 Project Files
 
+- `Bda Mini Project.ipynb` → Complete PySpark analysis & visualizations  
+- `Spark Mini Project Report.pdf` → Final written report summarizing results  
+- `pincode dataset.csv` → Dataset used (≈ 165 000+ records covering all India)  
 
-This is my Apache Spark Mini Project analyzing the Indian Pincode & Post Office Dataset.
-The project focuses on geographical clustering, postal density, underserved regions, and identifying suitable locations for new post offices using both analytical and geospatial models.
+---
 
-📂 Project Files
+## 🧰 Tech Stack
 
-Bda Mini Project.ipynb → Complete PySpark analysis and visualizations
+- 🐍 Python  
+- ⚡ Apache Spark  
+- 📊 Pandas, NumPy, Matplotlib, Folium  
+- 🌍 Geopy, Scikit-learn (DBSCAN clustering)  
+- 📓 Jupyter Notebook  
 
-Spark Mini Project Report.pdf → Final written report with results and insights
+---
 
-pincode dataset.csv → Dataset used (≈ 165 000 records)
+## 🌟 Key Highlights
 
-🧰 Tech Stack
+- Cleaned and processed India’s postal network dataset with >100k records  
+- Developed interactive maps (via Folium) visualizing post-office locations & clusters  
+- Built a *Saturation Score* model (Total Offices ÷ Unique Pincodes) to identify underserved districts  
+- Applied DBSCAN geospatial clustering to detect isolated post offices (>5 km apart)  
+- Provided actionable insights for new post-office placement and last-mile delivery optimization  
 
-🐍 Python
+---
 
-⚡ Apache Spark
+## 📊 Analysis Overview
 
-📊 Pandas, NumPy, Matplotlib, Folium, Seaborn
+- ✅ Data cleaning & standardization using PySpark  
+- 🌐 Geospatial clustering of post offices (latitude & longitude)  
+- 📈 District-level density heat-map (Saturation Score)  
+- 🗺️ Real-time “Nearest Post Office Finder” by user location  
+- 🧭 Straight-line distance tool for two post-offices and route visualization  
+- 🟢 Expansion recommendation for low-coverage regions  
 
-🌍 Geopy, Scikit-learn (DBSCAN)
+---
 
-📓 Jupyter Notebook
+## 📈 Major Findings
 
-🌟 Project Highlights
+- 📍 Metro regions (Delhi, Mumbai, Hyderabad) show high postal density  
+- 🟡 Rural or remote states/districts often have low saturation scores → targets for new offices  
+- 🟣 DBSCAN clustering identified many isolated offices (>5 km neighbour) indicating service gaps  
+- 🧮 Significant variation in state-wise “people per post office” ratio  
+- 📊 Produced a list of top 20 underserved districts for postal expansion  
 
-Cleaned, transformed, and analyzed a nationwide postal dataset (1 L + records).
+---
 
-Built geospatial visualizations of all Indian post offices using Folium maps.
+## 🗺️ Visualisations
 
-Implemented Nearest Post Office Finder — real-time map search by location.
+- 🧭 Nearby Post Offices Interactive Map  
+- 🟢 New Office Suitability Map (Low Saturation Districts)  
+- 🟣 Postal Network Optimisation Map (Isolated Offices)  
+- 🧮 Population vs Post Office Comparison Chart  
+- 🧾 Distance Between Two Post Offices Map  
 
-Designed a Saturation Score Model to identify underserved districts.
+---
 
-Applied DBSCAN clustering to detect isolated post offices (> 5 km apart).
+## 🪄 How to Run
 
-Proposed new postal locations using combined analytical + geospatial insights.
+```bash
+1. Clone the repository:  
+   bash
+   git clone https://github.com/pavan18-dev/Spark-Mini-Project.git
+   cd Spark-Mini-Project
+   
 
-📊 Analysis Performed
+2. Install dependencies:  
+   bash
+   pip install pyspark pandas folium geopy scikit-learn matplotlib 
+   
 
-✅ Data cleaning and schema optimization in PySpark
-
-🌐 Geographical clustering of offices by latitude & longitude
-
-📈 District-level postal density (Saturation Score = Total Offices / Unique Pincodes)
-
-🗺️ Interactive map of nearest post offices to user location
-
-🧭 Distance analysis between two post offices (via geodesic distance)
-
-🟢 Expansion recommendations for underserved regions
-
-📈 Key Insights
-
-📍 High postal concentration in metro areas (Delhi, Mumbai, Hyderabad).
-
-🟡 Rural and hilly regions show low saturation — potential for new offices.
-
-🟣 DBSCAN clusters showed isolated nodes > 5 km apart, indicating service gaps.
-
-🧮 Population vs Post Office ratio varies significantly — some states underserved.
-
-📊 Model proposed 20 priority districts nationwide for future postal infrastructure.
-
-🗺️ Visualizations
-
-🧭 Nearby Post Offices Interactive Map
-
-🟢 New Post Office Suitability Map (Low Saturation Districts)
-
-🟣 Postal Network Optimization Map (DBSCAN Isolation)
-
-🧮 Population vs Post Office Comparison Chart
-
-🧾 Distance between Two Post Offices Map
-
-🪄 How to Run
-
-Clone the repository:
-
-git clone https://github.com/your-username/Spark-Postal-Analysis.git
-cd Spark-Postal-Analysis
-
-
-Install dependencies:
-
-pip install pyspark pandas folium geopy scikit-learn matplotlib
-
-
-Run the notebook:
-
-jupyter notebook "Bda Mini Project.ipynb"
-
-🧾 Results Summary
-Analysis	Outcome
-Saturation Score Model	Highlighted top 20 underserved districts in India
-DBSCAN Clustering	Found isolated offices > 5 km from nearest neighbor
-Geodesic Distance Tool	Mapped real-world postal routes between areas
-Population Analysis	Compared state population to number of offices
-Visualization Layer	Interactive Folium maps for all postal activities
-🧩 Conclusion
-
-This project demonstrates how Big Data Analytics and Geospatial Computation
-can optimize national postal infrastructure by identifying underserved zones,
-planning new offices strategically, and enhancing last-mile delivery efficiency.
+3. Run the notebook:  
+   bash
+   jupyter notebook "Bda Mini Project.ipynb"
+   
